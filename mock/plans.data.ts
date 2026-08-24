@@ -1,0 +1,58 @@
+import { Plan } from "@/types/subscriptions";
+
+export const plans: Plan[] = [
+  {
+    plan_type: "standard",
+    name: "Standard",
+    price: "مجاناً",
+    unit: "",
+    max_listings_per_month: 1,
+    max_rentals_per_month: 5,
+    commission_rate: 10,
+    has_detailed_reports: false,
+    isPopular: false,
+    buttonText: "خطتك الحالية",
+    features: [
+      { text: "إضافة منتج واحد/شهرياً", active: true },
+      { text: "استئجار حتى 5 منتجات/شهرياً", active: true },
+      { text: "تقارير تفصيلية", active: false },
+      { text: "عمولة مخفضة", active: false },
+    ],
+  },
+  {
+    plan_type: "plus",
+    name: "Plus",
+    price: "29",
+    unit: "شهرياً",
+    max_listings_per_month: 3,
+    max_rentals_per_month: 10,
+    commission_rate: 7,
+    has_detailed_reports: false,
+    isPopular: false,
+    buttonText: "اشترك الآن",
+    features: [
+      { text: "إضافة حتى 3 منتجات", active: true },
+      { text: "استئجار حتى 10 منتجات", active: true },
+      { text: "عمولة مخفضة", active: true },
+      { text: "تقارير تفصيلية", active: false },
+    ],
+  },
+  {
+    plan_type: "pro",
+    name: "Pro 💎",
+    price: "69",
+    unit: "شهرياً",
+    max_listings_per_month: 8,
+    max_rentals_per_month: 20,
+    commission_rate: 4,
+    has_detailed_reports: true,
+    isPopular: true,
+    buttonText: "اشترك الآن",
+    features: [
+      { text: "إضافة حتى 8 منتجات", active: true },
+      { text: "استئجار حتى 20 منتجاً", active: true },
+      { text: "تقارير شهرية مفصّلة", active: true },
+      { text: "أقل عمولة ممكنة", active: true },
+    ],
+  },
+];

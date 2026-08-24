@@ -1,0 +1,58 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #00a79d;
+  --color-primary-light: #f0fdfa;
+  --color-green-harvest: #43a047;
+  --color-bg-page: #f8fafc;
+  --color-gradient-start: #00a79d;
+  --color-gradient-end: #43a047;
+
+  --radius-card: 32px;
+  --radius-btn: 16px;
+  --radius-tab: 10px;
+  --radius-container: 32px;
+  --radius-section: 24px;
+
+  --font-sans: var(--font-cairo), var(--font-jakarta), sans-serif;
+}
+
+
+@source "../components";
+@source "../app";
+
+.material-symbols-rounded {
+  font-family: var(--font-material-symbols) !important;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased;
+  font-feature-settings: 'liga';
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+/* --- كود إخفاء مؤشر نيكست --- */
+nextjs-portal, 
+#_next-static-indicator, 
+[data-nextjs-toast-wrapper],
+#nextjs-dev-indicator {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
