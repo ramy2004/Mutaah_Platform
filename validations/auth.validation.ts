@@ -60,6 +60,21 @@ export const validateRegister = (data: RegisterFormData): RegisterErrors => {
     errors.email = "صيغة البريد الإلكتروني غير صحيحة";
   }
 
+  // phone validation: required and format rules
+  if (!data.phone || !data.phone.trim()) {
+    errors.phone = "رقم الهاتف مطلوب";
+  } else {
+    const phone = data.phone.trim();
+    const phoneRegex = /^\d+$/;
+    if (!phoneRegex.test(phone)) {
+      errors.phone = "يجب إدخال أرقام فقط";
+    } else if (phone.length !== 10) {
+      errors.phone = "يجب أن يتكون الرقم من 10 خانات";
+    } else if (!phone.startsWith("059") && !phone.startsWith("056")) {
+      errors.phone = "يجب أن يبدأ الرقم بـ 059 أو 056";
+    }
+  }
+
   if (!data.governorate)
     errors.governorate = "اختر المحافظة";
 

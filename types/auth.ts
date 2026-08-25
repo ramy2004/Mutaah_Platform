@@ -14,6 +14,7 @@ export interface RegisterFormData {
   full_name: string;
   username: string;
   email: string;
+  phone?: string;
   governorate: string;
   district: string;
   password: string;
@@ -31,6 +32,7 @@ export interface RegisterErrors {
   full_name?: string;
   username?: string;
   email?: string;
+  phone?: string;
   governorate?: string;
   district?: string;
   password?: string;

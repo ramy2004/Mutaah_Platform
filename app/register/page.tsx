@@ -15,6 +15,7 @@ export default function RegisterPage() {
     full_name: "",
     username: "",
     email: "",
+    phone: "",
     governorate: "",
     district: "",
     password: "",
@@ -125,7 +126,23 @@ const handleSubmit = async () => {
           </div>
           {errors.email && <p className="text-red-500 text-xs mt-1 text-right">{errors.email}</p>}
 
-          {/* المنطقة */}
+                    {/* رقم الهاتف */}
+                    <div className="space-y-1">
+                      <label className="block text-xs font-bold text-gray-500 mr-1">رقم الهاتف</label>
+                      <div className="relative">
+                        <span className="material-symbols-rounded absolute right-3.5 top-1/2 -translate-y-1/2 text-gray-400 text-lg">phone</span>
+                        <input
+                          type="text"
+                          placeholder="059xxxxxxxx"
+                          value={formData.phone}
+                          onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                          className="w-full pr-11 pl-4 py-2.5 bg-gray-50 border border-gray-100 rounded-xl text-xs outline-none focus:bg-white focus:border-primary transition-all"
+                        />
+                      </div>
+                      {errors.phone && <p className="text-red-500 text-xs mt-1 text-right">{errors.phone}</p>}
+                    </div>
+
+                    {/* المنطقة */}
           <div className="space-y-1">
             <label className="block text-xs font-bold text-gray-500 mr-1">المنطقة</label>
             <div className="space-y-2">
