@@ -22,8 +22,13 @@ apiClient.interceptors.response.use(
   (response) => response,
   (error) => {
     if (error.response?.status === 401) {
+      const hadToken = Boolean(tokenStorage.getAccessToken());
+      const requestUrl = String(error.config?.url ?? "");
+      const isAuthAttempt = /\/(login|register|forgot-password|reset-password)$/.test(requestUrl);
+
       tokenStorage.clear();
-      if (typeof window !== "undefined") {
+
+      if (hadToken && !isAuthAttempt && typeof window !== "undefined") {
         window.location.href = "/login";
       }
     }
